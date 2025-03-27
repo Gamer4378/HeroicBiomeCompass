@@ -1,0 +1,19 @@
+name: HeroicBiomeCompass
+version: '${project.version}'
+main: me.heroicstudios.heroicbiomecompass.HeroicBiomeCompass
+api-version: '1.18'
+depend: [Vault]
+author: ItzOverWolf
+description: A plugin that allows players to locate biomes using a special compass
+commands:
+  biomecompass:
+    description: Main command for the biome compass plugin
+    usage: /<command> [reload]
+    aliases: [bc]
+permissions:
+  biomecompass.use:
+    description: Allows using the biome compass
+    default: true
+  biomecompass.reload:
+    description: Allows reloading the plugin configuration
+    default: op

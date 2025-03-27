@@ -1,0 +1,198 @@
+# HeroicBiomeCompass Configuration
+
+# Compass Item Settings
+compass:
+  name: "&6Biome Compass"
+  lore:
+    - "&7Right-click to open the biome finder menu"
+    - "&7Find any biome in the world!"
+    - "&7Costs coins to locate biomes"
+
+# Search Settings
+search:
+  cooldown: 60 # Seconds between searches
+  max-radius: 5000 # Maximum search radius in blocks
+  search-step: 16 # Blocks to check per step (recommended: 16 for performance)
+  point-compass: true # Whether the compass should point to the found location
+  effects:
+    particles: true # Show particle effects during search
+    sounds: true # Play sound effects
+    particle-count: 20 # Number of particles to spawn
+    sound-type: "BLOCK_NOTE_BLOCK_PLING" # Sound to play when biome is found
+
+# Crafting Recipe (Shaped)
+crafting:
+  enabled: true
+  ingredients:
+    top: ["DIAMOND", "COMPASS", "DIAMOND"]
+    middle: ["EMERALD", "NETHER_STAR", "EMERALD"]
+    bottom: ["DIAMOND", "COMPASS", "DIAMOND"]
+
+# GUI Configuration
+gui:
+  title: "&8Biome Finder"
+  size: 54
+  slots_per_page: 28 # Number of slots available for biomes per page
+  navigation:
+    previous_page:
+      material: "ARROW"
+      name: "&ePrevious Page"
+      slot: 48
+      lore:
+        - "&7Click to go to the previous page"
+    current_page:
+      material: "PAPER"
+      name: "&ePage {current}/{total}"
+      slot: 49
+    next_page:
+      material: "ARROW"
+      name: "&eNext Page"
+      slot: 50
+      lore:
+        - "&7Click to go to the next page"
+    filler:
+      material: "BLACK_STAINED_GLASS_PANE"
+      name: " "
+
+# Biome Configuration
+# Page 1 Biomes (Slots 10-16, 19-25, 28-34)
+biomes:
+  # Page 1
+  PLAINS:
+    page: 1
+    price: 100
+    material: "GRASS_BLOCK"
+    name: "&2Plains"
+    slot: 10
+    lore:
+      - "&7Cost: &a{price} coins"
+      - "&7A flat grassland biome"
+      - "&eClick to locate!"
+  DESERT:
+    page: 1
+    price: 120
+    material: "SAND"
+    name: "&eDesert"
+    slot: 11
+    lore:
+      - "&7Cost: &a{price} coins"
+      - "&7A hot, sandy biome"
+      - "&eClick to locate!"
+  FOREST:
+    page: 1
+    price: 110
+    material: "OAK_SAPLING"
+    name: "&2Forest"
+    slot: 12
+    lore:
+      - "&7Cost: &a{price} coins"
+      - "&7A dense woodland biome"
+      - "&eClick to locate!"
+  TAIGA:
+    page: 1
+    price: 130
+    material: "SPRUCE_SAPLING"
+    name: "&6Taiga"
+    slot: 13
+    lore:
+      - "&7Cost: &a{price} coins"
+      - "&7A cold, forested biome"
+      - "&eClick to locate!"
+  SWAMP:
+    page: 1
+    price: 150
+    material: "LILY_PAD"
+    name: "&5Swamp"
+    slot: 14
+    lore:
+      - "&7Cost: &a{price} coins"
+      - "&7A humid, murky biome"
+      - "&eClick to locate!"
+  SAVANNA:
+    page: 1
+    price: 140
+    material: "ACACIA_SAPLING"
+    name: "&6Savanna"
+    slot: 15
+    lore:
+      - "&7Cost: &a{price} coins"
+      - "&7A warm, dry biome"
+      - "&eClick to locate!"
+  JUNGLE:
+    page: 1
+    price: 160
+    material: "JUNGLE_SAPLING"
+    name: "&aJungle"
+    slot: 16
+    lore:
+      - "&7Cost: &a{price} coins"
+      - "&7A tropical rainforest biome"
+      - "&eClick to locate!"
+
+  # Page 2
+  SNOWY_TUNDRA:
+    page: 2
+    price: 170
+    material: "SNOW_BLOCK"
+    name: "&fSnowy Tundra"
+    slot: 10
+    lore:
+      - "&7Cost: &a{price} coins"
+      - "&7A frozen, icy biome"
+      - "&eClick to locate!"
+  MUSHROOM_FIELDS:
+    page: 2
+    price: 1000
+    material: "RED_MUSHROOM_BLOCK"
+    name: "&dMushroom Fields"
+    slot: 11
+    lore:
+      - "&7Cost: &a{price} coins"
+      - "&7A rare mushroom biome"
+      - "&eClick to locate!"
+  DEEP_DARK:
+    page: 2
+    price: 2000
+    material: "SCULK"
+    name: "&8Deep Dark"
+    slot: 12
+    lore:
+      - "&7Cost: &a{price} coins"
+      - "&7A dangerous underground biome"
+      - "&eClick to locate!"
+  BADLANDS:
+    page: 2
+    price: 400
+    material: "TERRACOTTA"
+    name: "&cBadlands"
+    slot: 13
+    lore:
+      - "&7Cost: &a{price} coins"
+      - "&7A colorful mesa biome"
+      - "&eClick to locate!"
+  FROZEN_OCEAN:
+    page: 2
+    price: 350
+    material: "ICE"
+    name: "&bFrozen Ocean"
+    slot: 14
+    lore:
+      - "&7Cost: &a{price} coins"
+      - "&7A frozen ocean biome"
+      - "&eClick to locate!"
+
+# Messages
+messages:
+  prefix: "&8[&6BiomeCompass&8] &7"
+  no-permission: "&cYou don't have permission to use this!"
+  no-biome-permission: "&cYou don't have permission to search for this biome!"
+  insufficient-funds: "&cYou don't have enough coins! Need: {amount}"
+  biome-found: "&aFound {biome} at X: {x}, Z: {z}!"
+  compass-given: "&aYou received a Biome Compass!"
+  menu-title: "&6Biome Finder"
+  search-in-progress: "&eSearching for {biome}..."
+  search-cooldown: "&cYou must wait {time} seconds before searching again!"
+  search-failed: "&cNo {biome} found within {radius} blocks!"
+  compass-pointing: "&aYour compass is now pointing to the {biome}!"
+  reload-success: "&aConfiguration reloaded successfully!"
+  reload-failed: "&cFailed to reload configuration. Check console for errors."
